@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nofil Ayaz - Computer Science Student & Athlete. Representing Pakistan in Soft Tennis. Explore my athletic portfolio, chess highlights, and tech projects.">
+    <meta name="keywords" content="Nofil Ayaz, Athlete, Soft Tennis, Pakistan, Computer Science Student, Chess, Fitness, Portfolio">
+    <meta name="author" content="Nofil Ayaz">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nofil Ayaz | CS Student & Athlete Portfolio">
+    <meta property="og:description" content="Representing Pakistan in Soft Tennis. CS Student & Chess enthusiast.">
+    <meta property="og:image" content="images/nofil_portrait.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Nofil Ayaz | CS Student & Athlete Portfolio">
+    <meta property="twitter:description" content="Representing Pakistan in Soft Tennis. CS Student & Chess enthusiast.">
+    <meta property="twitter:image" content="images/nofil_portrait.jpg">
+
+    <title>Nofil Ayaz | Computer Science Student & Athlete Portfolio</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS Sheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- Custom Animated Tracking Cursor -->
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+    <div class="custom-cursor-ring" id="cursor-ring"></div>
+
+    <!-- Tech Grid Overlay Background -->
+    <div class="grid-overlay"></div>
+
+    <!-- Ambient Particles Background -->
+    <canvas id="particles-canvas" class="particles-canvas"></canvas>
+
+    <!-- Glowing Background Decorative Blobs -->
+    <div class="blob-glow blob-1"></div>
+    <div class="blob-glow blob-2"></div>
+    <div class="blob-glow blob-3"></div>
+
+    <!-- Transparent Navigation Bar -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" id="nav-logo">
+                NOUFIL<span class="dot">.</span>
+            </a>
+            
+            <!-- Theme Toggle & Mobile Menu Toggle actions -->
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon toggle-icon"></i>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            
+            <!-- Nav Menu Link Items -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link active" id="nav-link-home">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link" id="nav-link-about">About</a></li>
+                <li class="nav-item"><a href="#training" class="nav-link" id="nav-link-training">Training</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link" id="nav-link-gallery">Gallery</a></li>
+                <li class="nav-item"><a href="#achievements" class="nav-link" id="nav-link-achievements">Achievements</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link" id="nav-link-contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Full Screen Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <!-- Text Info Column -->
+            <div class="hero-content">
+                <div class="badge fade-in-left">
+                    <span class="badge-dot"></span> Nofil Ayaz
+                </div>
+                <h1 class="hero-title fade-in-left" id="hero-heading">Representing Pakistan</h1>
+                
+                <!-- Typing Subtitle Animation -->
+                <h2 class="hero-subtitle fade-in-left" id="hero-subheading">
+                    I am a <span id="typed-text" class="text-green font-display"></span><span class="typed-cursor">|</span>
+                </h2>
+                
+                <p class="hero-description fade-in-left" id="hero-desc">
+                    Representing Pakistan in Soft Tennis. Passionate about technology, discipline, and high performance both on the court and in the digital world.
+                </p>
+                <div class="hero-buttons fade-in-left">
+                    <a href="#gallery" class="btn btn-primary" id="btn-hero-gallery">
+                        View Gallery <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary" id="btn-hero-contact">
+                        Contact Me
+                    </a>
+                </div>
+
+                <!-- Highlight Stats Bar -->
+                <div class="hero-stats-bar fade-in-left" style="margin-top: 2.5rem; display: flex; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem;">
+                    <div class="stat-item">
+                        <span style="font-family: var(--ff-display); font-size: 1.8rem; font-weight: 800; color: var(--clr-accent); display: block; line-height: 1;">3+</span>
+                        <span style="font-size: 0.8rem; color: var(--clr-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Int. Tournaments</span>
+                    </div>
+                    <div class="stat-item">
+                        <span style="font-family: var(--ff-display); font-size: 1.8rem; font-weight: 800; color: var(--clr-accent-alt); display: block; line-height: 1;">🇵🇰</span>
+                        <span style="font-size: 0.8rem; color: var(--clr-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">National Player</span>
+                    </div>
+                    <div class="stat-item">
+                        <span style="font-family: var(--ff-display); font-size: 1.8rem; font-weight: 800; color: var(--clr-accent); display: block; line-height: 1;">CS</span>
+                        <span style="font-size: 0.8rem; color: var(--clr-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Developer & Athlete</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Media Column -->
+            <div class="hero-image-container slide-in-right">
+                <div class="hero-image-glow"></div>
+                <div class="hero-image-wrapper">
+                    <img src="images/profile.jpeg" alt="Nofil Ayaz Portrait" class="hero-img" id="hero-img-portrait">
+                    <div class="hero-image-overlay"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Smooth Scroll Indicator Guide -->
+        <a href="#about" class="scroll-indicator" id="scroll-indicator" aria-label="Scroll Down">
+            <span class="scroll-mouse">
+                <span class="scroll-wheel"></span>
+            </span>
+            <span class="scroll-text">Scroll Details</span>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" id="about-tag">Who I Am</span>
+                <h2 class="section-title" id="about-title">About Me</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="about-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 900px; margin: 0 auto;">
+                <!-- Short Bio Card Detail -->
+                <div class="about-card card-glow-green">
+                    <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Computer Science</h3>
+                    <p>
+                        Pursuing my degree in Computer Science, focusing on software engineering, problem-solving, and efficient algorithms. I apply the same logical structures and strategic thinking in technology as I do in athletic competitions.
+                    </p>
+                </div>
+                
+                <!-- Sports Career Card Detail -->
+                <div class="about-card card-glow-blue">
+                    <div class="card-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></div>
+                    <h3>Soft Tennis Athlete</h3>
+                    <p>
+                        A proud national-level Soft Tennis athlete representing Pakistan in regional and international tournaments. My athletic path is defined by constant training, tactical discipline, and strong physical conditioning.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training & Performance Analytics Section -->
+    <section id="training" class="training section-padding reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" id="training-tag">Athletic Routine & Metrics</span>
+                <h2 class="section-title" id="training-title">Training & Analytics</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <!-- Training Stats Highlights Header -->
+            <div class="training-stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem;">
+                <div class="about-card card-glow-green" style="text-align: center; padding: 1.5rem;">
+                    <div class="card-icon" style="margin: 0 auto 0.75rem auto;"><i class="fa-solid fa-stopwatch text-green"></i></div>
+                    <h4 style="font-family: var(--ff-display); font-size: 1.8rem; font-weight: 800; color: var(--clr-accent);">24+ Hrs</h4>
+                    <p style="font-size: 0.85rem; color: var(--clr-text-muted); margin: 0;">Weekly High-Intensity Training</p>
+                </div>
+                <div class="about-card card-glow-blue" style="text-align: center; padding: 1.5rem;">
+                    <div class="card-icon" style="margin: 0 auto 0.75rem auto;"><i class="fa-solid fa-fire text-blue"></i></div>
+                    <h4 style="font-family: var(--ff-display); font-size: 1.8rem; font-weight: 800; color: var(--clr-accent-alt);">1,850 kcal</h4>
+                    <p style="font-size: 0.85rem; color: var(--clr-text-muted); margin: 0;">Average Daily Burn (Sessions)</p>
+                </div>
+                <div class="about-card card-glow-green" style="text-align: center; padding: 1.5rem;">
+                    <div class="card-icon" style="margin: 0 auto 0.75rem auto;"><i class="fa-solid fa-heart-pulse text-green"></i></div>
+                    <h4 style="font-family: var(--ff-display); font-size: 1.8rem; font-weight: 800; color: var(--clr-accent);">52 BPM</h4>
+                    <p style="font-size: 0.85rem; color: var(--clr-text-muted); margin: 0;">Resting Heart Rate</p>
+                </div>
+                <div class="about-card card-glow-blue" style="text-align: center; padding: 1.5rem;">
+                    <div class="card-icon" style="margin: 0 auto 0.75rem auto;"><i class="fa-solid fa-trophy text-blue"></i></div>
+                    <h4 style="font-family: var(--ff-display); font-size: 1.8rem; font-weight: 800; color: var(--clr-accent-alt);">94%</h4>
+                    <p style="font-size: 0.85rem; color: var(--clr-text-muted); margin: 0;">Match Readiness Index</p>
+                </div>
+            </div>
+
+            <!-- Charts Grid Container -->
+            <div class="training-charts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                
+                <!-- Chart Card 1: Weekly Hours Trend -->
+                <div class="about-card card-glow-green" style="padding: 1.75rem; border-radius: var(--radius-lg);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+                        <h3 style="font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+                            <i class="fa-solid fa-chart-line text-green"></i> Weekly Training Volume
+                        </h3>
+                        <span style="font-size: 0.75rem; background: rgba(34, 197, 94, 0.15); color: var(--clr-accent); padding: 0.25rem 0.65rem; border-radius: var(--radius-full); font-weight: 600;">Hours / Week</span>
+                    </div>
+                    <div style="position: relative; height: 260px; width: 100%;">
+                        <canvas id="weeklyTrainingChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart Card 2: Workout Distribution Radar -->
+                <div class="about-card card-glow-blue" style="padding: 1.75rem; border-radius: var(--radius-lg);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+                        <h3 style="font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+                            <i class="fa-solid fa-chart-pie text-blue"></i> Athletic Skill Matrix
+                        </h3>
+                        <span style="font-size: 0.75rem; background: rgba(59, 130, 246, 0.15); color: var(--clr-accent-alt); padding: 0.25rem 0.65rem; border-radius: var(--radius-full); font-weight: 600;">Performance Score</span>
+                    </div>
+                    <div style="position: relative; height: 260px; width: 100%;">
+                        <canvas id="skillRadarChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Training Weekly Schedule Session Cards -->
+            <div class="training-sessions-wrapper">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="font-family: var(--ff-display); font-size: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--clr-text-primary);">
+                        <i class="fa-solid fa-calendar-check text-green" style="margin-right: 0.5rem;"></i> Weekly Training Schedule
+                    </h3>
+                    <p style="color: var(--clr-text-muted); font-size: 0.95rem; margin-top: 0.25rem;">
+                        Structured daily regimen balancing on-court drills, physical conditioning, and recovery
+                    </p>
+                </div>
+
+                <div class="sessions-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    
+                    <!-- Session Card 1 -->
+                    <div class="achievement-card" style="display: flex; gap: 1rem; align-items: flex-start; padding: 1.5rem;">
+                        <div class="achievement-icon" style="flex-shrink: 0; background: rgba(34, 197, 94, 0.1); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-dumbbell text-green" style="font-size: 1.4rem;"></i>
+                        </div>
+                        <div style="flex-grow: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--clr-accent);">Mon & Thu • 06:30 AM</span>
+                                <span style="font-size: 0.7rem; background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 10px; color: var(--clr-text-muted);">90 Mins</span>
+                            </div>
+                            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--clr-text-primary); margin-bottom: 0.4rem;">Strength & Power Hypertrophy</h4>
+                            <p style="font-size: 0.85rem; color: var(--clr-text-muted); line-height: 1.5; margin: 0;">Heavy squats, deadlifts, plyometric box jumps, and explosive core movements to maximize court sprint power.</p>
+                        </div>
+                    </div>
+
+                    <!-- Session Card 2 -->
+                    <div class="achievement-card" style="display: flex; gap: 1rem; align-items: flex-start; padding: 1.5rem;">
+                        <div class="achievement-icon" style="flex-shrink: 0; background: rgba(59, 130, 246, 0.1); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-table-tennis-paddle-ball text-blue" style="font-size: 1.4rem;"></i>
+                        </div>
+                        <div style="flex-grow: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--clr-accent-alt);">Tue & Fri • 04:00 PM</span>
+                                <span style="font-size: 0.7rem; background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 10px; color: var(--clr-text-muted);">120 Mins</span>
+                            </div>
+                            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--clr-text-primary); margin-bottom: 0.4rem;">Soft Tennis Tactical Drills</h4>
+                            <p style="font-size: 0.85rem; color: var(--clr-text-muted); line-height: 1.5; margin: 0;">Serve-and-volley drills, forehand cut-shots, baseline endurance rallies, and match simulation practice.</p>
+                        </div>
+                    </div>
+
+                    <!-- Session Card 3 -->
+                    <div class="achievement-card" style="display: flex; gap: 1rem; align-items: flex-start; padding: 1.5rem;">
+                        <div class="achievement-icon" style="flex-shrink: 0; background: rgba(34, 197, 94, 0.1); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-person-running text-green" style="font-size: 1.4rem;"></i>
+                        </div>
+                        <div style="flex-grow: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--clr-accent);">Wednesday • 07:00 AM</span>
+                                <span style="font-size: 0.7rem; background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 10px; color: var(--clr-text-muted);">60 Mins</span>
+                            </div>
+                            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--clr-text-primary); margin-bottom: 0.4rem;">Cardio & Track Interval Sprints</h4>
+                            <p style="font-size: 0.85rem; color: var(--clr-text-muted); line-height: 1.5; margin: 0;">400m track sprints, shuttle runs, agility ladder work, and high VO2 max aerobic conditioning.</p>
+                        </div>
+                    </div>
+
+                    <!-- Session Card 4 -->
+                    <div class="achievement-card" style="display: flex; gap: 1rem; align-items: flex-start; padding: 1.5rem;">
+                        <div class="achievement-icon" style="flex-shrink: 0; background: rgba(59, 130, 246, 0.1); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-spa text-blue" style="font-size: 1.4rem;"></i>
+                        </div>
+                        <div style="flex-grow: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--clr-accent-alt);">Sat & Sun • Flexible</span>
+                                <span style="font-size: 0.7rem; background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 10px; color: var(--clr-text-muted);">Active Rest</span>
+                            </div>
+                            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--clr-text-primary); margin-bottom: 0.4rem;">Active Recovery & Mobility</h4>
+                            <p style="font-size: 0.85rem; color: var(--clr-text-muted); line-height: 1.5; margin: 0;">Dynamic stretching, mobility sessions, hydrotherapy, and tactical video match analysis.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section-padding reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" id="gallery-tag">Visual Showcase</span>
+                <h2 class="section-title" id="gallery-title">Gallery</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <!-- Tab Filter Buttons -->
+            <div class="gallery-tabs-container">
+                <div class="gallery-tabs" id="gallery-tabs">
+                    <button class="tab-btn active" data-filter="all" id="tab-all">All</button>
+                    <button class="tab-btn" data-filter="tennis" id="tab-tennis">Soft Tennis</button>
+                    <button class="tab-btn" data-filter="videos" id="tab-videos">Videos</button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid Layout -->
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Item 1 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-1">
+                    <img src="images/tennis_1.jpg" alt="Track Conditioning Session" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">Track Conditioning</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 2 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-2">
+                    <img src="images/tennis_2.jpg" alt="Pakistan & Thailand Teams on Court" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">Pakistan & Thailand Teams</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-3">
+                    <img src="images/tennis_3.jpg" alt="International Delegation Match" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">Delegation Friendship Match</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-4">
+                    <img src="images/tennis_4.jpg" alt="Pathum Thani International Soft Tennis Tournament 2025" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">Pathum Thani International 2025</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-5">
+                    <img src="images/tennis_5.jpg" alt="National Athlete Presentation" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">National Team Tracksuit</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-6">
+                    <img src="images/tennis_6.jpg" alt="Noufil on Center Court" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">Center Court Discussion</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-7">
+                    <img src="images/tennis_7.jpg" alt="Match Play Action Shot" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">On-Court Team Coordination</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 8 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-8">
+                    <img src="images/tennis_8.jpg" alt="Sunchang Open Soft Tennis Championship" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">Sunchang Open Tournament</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 9 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-9">
+                    <img src="images/tennis_9.jpg" alt="Serving Action Shot" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">Match Point Play</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 10 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-10">
+                    <img src="images/tennis_10.jpg" alt="Korea Cup Soft Tennis Preparation" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">Korea Cup Serving Stance</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 11 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-11">
+                    <img src="images/tennis_11.jpg" alt="Korea Cup Walkway Team" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">Korea Cup Delegation Walk</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 12 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-12">
+                    <img src="images/tennis_12.jpg" alt="Indoor Match Ready Stance" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">Indoor Tournament Play</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 13 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-13">
+                    <img src="images/tennis_13.jpg" alt="Korea Cup Outdoor Doubles Match" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">Korea Cup Outdoor Match</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 14 - Tennis -->
+                <div class="gallery-item" data-category="tennis" id="gallery-item-14">
+                    <img src="images/tennis_14.jpg" alt="Noufil and Partner Walking on Court" class="gallery-img">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Soft Tennis</span>
+                            <h4 class="gallery-item-title">Post-Match Delegation Walk</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 1 - Capital TV -->
+                <div class="gallery-item" data-category="videos" data-video="videos/capital tv.mp4" id="gallery-item-v1">
+                    <video src="videos/capital tv.mp4#t=0.5" class="gallery-video-thumb" preload="metadata" muted></video>
+                    <div class="video-play-badge"><i class="fa-solid fa-play"></i></div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Videos</span>
+                            <h4 class="gallery-item-title">Capital TV News Coverage</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 - Channel 5 -->
+                <div class="gallery-item" data-category="videos" data-video="videos/channel 5.mp4" id="gallery-item-v2">
+                    <video src="videos/channel 5.mp4#t=0.5" class="gallery-video-thumb" preload="metadata" muted></video>
+                    <div class="video-play-badge"><i class="fa-solid fa-play"></i></div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Videos</span>
+                            <h4 class="gallery-item-title">Channel 5 Media Feature</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3 - Ceremony -->
+                <div class="gallery-item" data-category="videos" data-video="videos/cermony.mp4" id="gallery-item-v3">
+                    <video src="videos/cermony.mp4#t=0.5" class="gallery-video-thumb" preload="metadata" muted></video>
+                    <div class="video-play-badge"><i class="fa-solid fa-play"></i></div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Videos</span>
+                            <h4 class="gallery-item-title">Award Ceremony Highlights</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 4 - Workout -->
+                <div class="gallery-item" data-category="videos" data-video="videos/workout.mp4" id="gallery-item-v4">
+                    <video src="videos/workout.mp4#t=0.5" class="gallery-video-thumb" preload="metadata" muted></video>
+                    <div class="video-play-badge"><i class="fa-solid fa-play"></i></div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Videos</span>
+                            <h4 class="gallery-item-title">Athlete Workout Routine</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 5 - Body Transformation -->
+                <div class="gallery-item" data-category="videos" data-video="videos/body transformation.mp4" id="gallery-item-v5">
+                    <video src="videos/body transformation.mp4#t=0.5" class="gallery-video-thumb" preload="metadata" muted></video>
+                    <div class="video-play-badge"><i class="fa-solid fa-play"></i></div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <span class="gallery-item-category">Videos</span>
+                            <h4 class="gallery-item-title">Body Transformation Journey</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements section-padding reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" id="achievements-tag">Milestones</span>
+                <h2 class="section-title" id="achievements-title">Achievements</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="achievements-grid">
+                <!-- Card 1 -->
+                <div class="achievement-card" id="achievement-card-1">
+                    <div class="achievement-icon">
+                        <i class="fa-solid fa-trophy text-green"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>National Representative</h3>
+                        <p>Selected to represent Pakistan in Soft Tennis tournaments, demonstrating elite court skills and tactical discipline.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="achievement-card" id="achievement-card-2">
+                    <div class="achievement-icon">
+                        <i class="fa-solid fa-medal text-blue"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Regional Championships</h3>
+                        <p>Secured top podium finishes and accolades in multiple regional Soft Tennis singles and doubles events.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="achievement-card" id="achievement-card-3">
+                    <div class="achievement-icon">
+                        <i class="fa-solid fa-code text-green"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Tech Project Innovator</h3>
+                        <p>Built and optimized robust full-stack software applications as part of academic studies and hackathons.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="achievement-card" id="achievement-card-4">
+                    <div class="achievement-icon">
+                        <i class="fa-solid fa-bolt text-blue"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Physical Conditioning</h3>
+                        <p>Achieved elite physical performance metrics across speed, core strength, and endurance indexes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificates Showcase Sub-Section -->
+            <div class="certificates-wrapper" style="margin-top: 3.5rem;">
+                <div class="certificates-header" style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="font-family: var(--ff-display); font-size: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--clr-text-primary);">
+                        <i class="fa-solid fa-certificate text-green" style="margin-right: 0.5rem;"></i> Official Certificates & Trophies
+                    </h3>
+                    <p style="color: var(--clr-text-muted); font-size: 0.95rem; margin-top: 0.25rem;">
+                        Official recognition and international tournament certificates
+                    </p>
+                </div>
+
+                <div class="certificates-grid">
+                    <!-- Certificate Card 1 -->
+                    <div class="certificate-card" id="cert-card-1">
+                        <div class="cert-img-wrapper">
+                            <img src="images/cert_trophy_korea2026.jpg" alt="2026 Korea Cup 3rd Place Certificate Trophy" class="cert-img">
+                            <div class="cert-overlay">
+                                <span class="cert-badge">3rd Place Award</span>
+                            </div>
+                        </div>
+                        <div class="cert-details">
+                            <span class="cert-tag">Korea Cup 2026</span>
+                            <h4>3rd Place Trophy - Mixed Team Event</h4>
+                            <p>2026 Nonghyup Bank Incheon Korea Cup International Soft Tennis Tournament, Incheon Korea.</p>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Card 2 -->
+                    <div class="certificate-card" id="cert-card-2">
+                        <div class="cert-img-wrapper">
+                            <img src="images/cert_thailand_participate2025.jpg" alt="Pathumthani International Soft Tennis Tournament 2025 Certificate" class="cert-img">
+                            <div class="cert-overlay">
+                                <span class="cert-badge">Official Participation</span>
+                            </div>
+                        </div>
+                        <div class="cert-details">
+                            <span class="cert-tag">Thailand 2025</span>
+                            <h4>Pathumthani International Tournament</h4>
+                            <p>Certificate of Participation by Pathumthani Provincial Administrative Organization & Soft Tennis Association of Thailand.</p>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Card 3 -->
+                    <div class="certificate-card" id="cert-card-3">
+                        <div class="cert-img-wrapper">
+                            <img src="images/cert_thailand_camp2025.jpg" alt="Training Camp Certificate with Thailand Soft Tennis National Team" class="cert-img">
+                            <div class="cert-overlay">
+                                <span class="cert-badge">National Team Camp</span>
+                            </div>
+                        </div>
+                        <div class="cert-details">
+                            <span class="cert-tag">Thailand 2025</span>
+                            <h4>National Team Training Camp</h4>
+                            <p>Certificate awarded for training camp with the Thailand Soft Tennis National Team in September 2025.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" id="contact-tag">Get In Touch</span>
+                <h2 class="section-title" id="contact-title">Contact Me</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Let's Collaborate</h3>
+                    <p>Have an athletic sponsorship opportunity, a tech collaboration, or a query? Reach out directly using the form, or follow me on my social handles.</p>
+                    
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <i class="fa-solid fa-envelope detail-icon"></i>
+                            <div>
+                                <span>Email</span>
+                                <p>nofil.ayaz@example.com</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fa-solid fa-location-dot detail-icon"></i>
+                            <div>
+                                <span>Location</span>
+                                <p>Karachi, Pakistan 🇵🇰</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Ajax Contact Form -->
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form" action="contact.php" method="POST">
+                        <div class="form-group">
+                            <label for="form-name">Name</label>
+                            <input type="text" id="form-name" name="name" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="form-email">Email</label>
+                            <input type="email" id="form-email" name="email" placeholder="Your Email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-message">Message</label>
+                            <textarea id="form-message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit" id="btn-submit">
+                            <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        
+                        <div id="form-feedback" class="form-feedback"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bg-glow"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Info -->
+                <div class="footer-col brand-col">
+                    <a href="#home" class="footer-logo">
+                        NOUFIL<span class="dot">.</span>
+                    </a>
+                    <p class="footer-desc">
+                        National Soft Tennis athlete representing Pakistan & Computer Science student. Crafting strategic code and high-performance court plays.
+                    </p>
+                    <div class="footer-status-tags">
+                        <span class="status-tag"><i class="fa-solid fa-medal"></i> Pakistan Athlete</span>
+                        <span class="status-tag"><i class="fa-solid fa-code"></i> CS Student</span>
+                    </div>
+                </div>
+                
+                <!-- Quick Navigation Links -->
+                <div class="footer-col links-col">
+                    <h4>Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fa-solid fa-chevron-right link-arrow"></i> Home</a></li>
+                        <li><a href="#about"><i class="fa-solid fa-chevron-right link-arrow"></i> About</a></li>
+                        <li><a href="#gallery"><i class="fa-solid fa-chevron-right link-arrow"></i> Gallery</a></li>
+                        <li><a href="#achievements"><i class="fa-solid fa-chevron-right link-arrow"></i> Achievements</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-chevron-right link-arrow"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Core Spheres -->
+                <div class="footer-col focus-col">
+                    <h4>Core Spheres</h4>
+                    <ul class="focus-items">
+                        <li>
+                            <span class="focus-title">Soft Tennis</span>
+                            <span class="focus-desc">National Team representation</span>
+                        </li>
+                        <li>
+                            <span class="focus-title">Software Dev</span>
+                            <span class="focus-desc">Interactive tech systems</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Connect Info -->
+                <div class="footer-col connect-col">
+                    <h4>Get In Touch</h4>
+                    <p class="connect-desc">Open for sponsorships, athletic programs, and technical collaborations.</p>
+                    <a href="mailto:nofil.ayaz@example.com" class="footer-email-link">
+                        <i class="fa-solid fa-envelope"></i> nofil.ayaz@example.com
+                    </a>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="LinkedIn" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub" class="social-btn"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" aria-label="Twitter" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Instagram" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nofil Ayaz. All Rights Reserved.</p>
+                <div class="footer-badges">
+                    <span class="badge-item"><i class="fa-solid fa-bolt"></i> Speed</span>
+                    <span class="badge-item"><i class="fa-solid fa-brain"></i> Strategy</span>
+                    <span class="badge-item"><i class="fa-solid fa-heart text-green"></i> Precision</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Scroll-To-Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+        <svg class="scroll-progress-svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="46" class="scroll-progress-bg"></circle>
+            <circle cx="50" cy="50" r="46" class="scroll-progress-circle"></circle>
+        </svg>
+        <i class="fa-solid fa-arrow-up scroll-arrow"></i>
+    </button>
+
+    <!-- Premium Lightbox Overlay Modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Media Lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">&times;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Enlarged gallery visual" style="display: block;">
+            <video id="lightbox-video" controls style="display: none; max-width: 100%; max-height: 80vh; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);"></video>
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Script Loads -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/typing.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/training-charts.js"></script>
+</body>
+</html>
