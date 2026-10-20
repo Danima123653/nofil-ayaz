@@ -1,0 +1,140 @@
+/* 
+   Nofil Ayaz Portfolio - Variables & Design Tokens
+   Strict Color Palette: Black, Dark Grey, Neon Green, Sky Blue, White
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+:root {
+    /* Premium Color Palette Tokens */
+    --clr-bg-primary: #05070A;
+    --clr-bg-secondary: #0D111A;
+    --clr-bg-secondary-rgb: 13, 17, 26;
+    --clr-bg-card: rgba(18, 24, 38, 0.55);
+    
+    --clr-accent: #00F5D4;
+    --clr-accent-rgb: 0, 245, 212;
+    --clr-accent-glow: rgba(0, 245, 212, 0.35);
+    
+    --clr-accent-alt: #00D9F7;
+    --clr-accent-alt-rgb: 0, 217, 247;
+    --clr-accent-alt-glow: rgba(0, 217, 247, 0.35);
+
+    --clr-text-primary: #F8FAFC;
+    --clr-text-secondary: #CBD5E1;
+    --clr-text-muted: #8899AC;
+    --clr-text-dark: #475569;
+    
+    /* Font Families */
+    --ff-primary: 'Outfit', sans-serif;
+    --ff-display: 'Space Grotesk', sans-serif;
+
+    /* Spacing Scale */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3.5rem;
+    --space-xxl: 6rem;
+
+    /* Borders & Radius */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+    
+    --border-thin: 1px solid rgba(255, 255, 255, 0.08);
+    --border-accent: 1px solid var(--clr-accent);
+    --border-glow: 1px solid rgba(0, 245, 212, 0.3);
+
+    /* Shadow & Glow Effects */
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.8);
+    --neon-glow: 0 0 20px rgba(0, 245, 212, 0.35);
+    --neon-glow-strong: 0 0 35px rgba(0, 245, 212, 0.6);
+    --neon-glow-alt: 0 0 20px rgba(0, 217, 247, 0.35);
+
+    /* Transitions */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Dynamic Component Variables */
+    --cursor-color-dot: var(--clr-accent);
+    --cursor-color-ring: var(--clr-accent-alt);
+    --spotlight-glow: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(0, 245, 212, 0.08), transparent 45%);
+}
+
+/* Reset and Global Base Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background-color: var(--clr-bg-primary);
+}
+
+body {
+    font-family: var(--ff-primary);
+    background-color: var(--clr-bg-primary);
+    color: var(--clr-text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--clr-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-accent);
+}
+
+/* Light Mode Theme Overrides */
+body.light-mode {
+    --clr-bg-primary: #F8FAFC;
+    --clr-bg-secondary: #FFFFFF;
+    --clr-bg-secondary-rgb: 255, 255, 255;
+    
+    --clr-accent: #16A34A;
+    --clr-accent-rgb: 22, 163, 74;
+    --clr-accent-glow: rgba(22, 163, 74, 0.12);
+    
+    --clr-accent-alt: #0284C7;
+    --clr-accent-alt-rgb: 2, 132, 199;
+    --clr-accent-alt-glow: rgba(2, 132, 199, 0.12);
+
+    --clr-text-primary: #0F172A;
+    --clr-text-secondary: #334155;
+    --clr-text-muted: #64748B;
+    --clr-text-dark: #94A3B8;
+
+    --border-thin: 1px solid rgba(15, 23, 42, 0.08);
+    --border-glow: 1px solid rgba(22, 163, 74, 0.15);
+    
+    --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.04), 0 2px 4px -1px rgba(15, 23, 42, 0.02);
+    --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+    
+    --neon-glow: 0 0 15px rgba(22, 163, 74, 0.15);
+    --neon-glow-strong: 0 0 25px rgba(22, 163, 74, 0.25);
+    --neon-glow-alt: 0 0 15px rgba(2, 132, 199, 0.15);
+    
+    --spotlight-glow: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(22, 163, 74, 0.04) 0%, transparent 80%);
+}
