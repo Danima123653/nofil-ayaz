@@ -56,11 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('active');
         });
 
-        // Close menu when clicking on nav link
+        // Close menu and activate target section when clicking on nav link
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navToggle.classList.remove('active');
                 navMenu.classList.remove('active');
+                
+                const targetId = link.getAttribute('href');
+                if (targetId && targetId.startsWith('#')) {
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl && targetEl.classList.contains('reveal')) {
+                        targetEl.classList.add('active');
+                    }
+                }
             });
         });
 
@@ -78,21 +86,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     const revealElements = document.querySelectorAll('.reveal');
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Animates only once
-            }
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Animates only once
+                }
+            });
+        }, {
+            threshold: 0.02, // Small threshold ensures tall sections (like mobile gallery 5000px+) trigger reliably
+            rootMargin: '0px 0px -20px 0px'
         });
-    }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px' // offset triggers slightly before viewport entry
-    });
 
-    revealElements.forEach(element => {
-        revealObserver.observe(element);
-    });
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        revealElements.forEach(element => {
+            element.classList.add('active');
+        });
+    }
 
     // ==========================================================================
     // 4. AJAX Contact Form Submission

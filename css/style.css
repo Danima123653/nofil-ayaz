@@ -792,6 +792,7 @@
     border: var(--border-thin);
     cursor: pointer;
     background-color: var(--clr-bg-secondary);
+    opacity: 1;
 }
 
 .gallery-img {
@@ -1849,6 +1850,19 @@
     .gallery-tabs {
         flex-wrap: wrap;
         gap: var(--space-xs);
+        max-width: 100%;
+    }
+
+    .lightbox-close {
+        top: 1rem;
+        right: 1.25rem;
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
     }
 }
 
